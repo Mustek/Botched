@@ -1,0 +1,15 @@
+{
+    "name": "MC UUID",
+    "tag": "MC-UUID",
+    "version": "1.0",
+    "description": "Returns with a UUID or a Username",
+    "usage": ".uuid <name|uuid>",
+    "mainConstruct": "mcuuid",
+
+    "permissions": {},
+
+    "settings": {
+        "uuid-url": "https://api.mojang.com/profiles/minecraft",
+        "nick-url": "https://sessionserver.mojang.com/session/minecraft/profile/"
+    }
+}

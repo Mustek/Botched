@@ -1,0 +1,16 @@
+{
+    "name": "RSS Feeder",
+    "tag": "RSS",
+    "version": "1.0",
+    "description": "Pings JSON RSS feeds",
+    "usage": ".rss | .blog",
+    "mainConstruct": "rssfeeder",
+
+    "subscriptions": ["#example"],
+    "permissions": {},
+
+    "settings": {
+        "source-url": "https://example.com/url/to/rss/feed/",
+        "googl-key": "0"
+    }
+}

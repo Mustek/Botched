@@ -1,0 +1,21 @@
+{
+    "name": "MC Version",
+    "tag": "VER",
+    "version": "1.0",
+    "description": "Polls and shows the latest Minecraft version",
+    "usage": ".version",
+    "mainConstruct": "mcversion",
+
+    "permissions": {},
+
+    "subscriptions": ["#example"],
+
+    "settings": {
+        "source-url": "https://s3.amazonaws.com/Minecraft.Download/versions/versions.json",
+        "source-port": 80,
+        "source-method": "GET",
+        "user-agent": "Botched/network/operator",
+        "check-interval": 15,
+        "comment": "Check-interval in seconds"
+    }
+}

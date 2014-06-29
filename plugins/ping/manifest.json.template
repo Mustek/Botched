@@ -1,0 +1,10 @@
+{
+    "name": "Ping",
+    "tag": "PING",
+    "version": "1.0",
+    "description": "Responds to ping requests",
+    "usage": ".ping",
+    "mainConstruct": "ping",
+
+    "permissions": {}
+}

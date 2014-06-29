@@ -1,0 +1,18 @@
+{
+    "name": "Jira",
+    "tag": "JIRA",
+    "version": "1.0",
+    "description": "Looks up Mojira bugs",
+    "usage": ".bugs | .bug <issue>",
+    "mainConstruct": "jira",
+
+    "permissions": {},
+
+    "settings": {
+        "googl-key": "0",
+        "jira-url": "https://bugs.mojang.com",
+        "jira-browse": "https://bugs.mojang.com/browse/{bug}",
+        "jira-api": "https://bugs.mojang.com/rest/api/latest/issue/{bug}",
+        "retry-count": 3
+    }
+}

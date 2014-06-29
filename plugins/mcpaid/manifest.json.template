@@ -1,0 +1,14 @@
+{
+    "name": "MC Paid",
+    "tag": "MCPAID",
+    "version": "1.0",
+    "description": "Checks if a Minecraft account is paid for",
+    "usage": ".paid <name>",
+    "mainConstruct": "mcpaid",
+
+    "permissions": {},
+
+    "settings": {
+        "source-url": "https://minecraft.net/haspaid.jsp?user="
+    }
+}

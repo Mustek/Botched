@@ -1,0 +1,22 @@
+{
+    "bot": {
+        "nickname": "BotchedClone",
+        "username": "Botched-Clone",
+        "command": "."
+    },
+
+    "server": {
+        "host": "localhost",
+        "port": 6339,
+        "https": true,
+        "password": "",
+        "autoConnect": true
+    },
+
+    "app": {
+        "Build": ".prod",
+        "environment": "Production",
+        "airbrakeHost": "localhost",
+        "airbrakeKey": "0"
+    }
+}

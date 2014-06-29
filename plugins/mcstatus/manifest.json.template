@@ -1,0 +1,14 @@
+{
+    "name": "MC Status",
+    "tag": "MCSTATUS",
+    "version": "1.0",
+    "description": "Shows the current state of the Minecraft servers",
+    "usage": ".status | .status <server>",
+    "mainConstruct": "mcstatus",
+
+    "permissions": {},
+
+    "settings": {
+        "status-url": "http://url.to/secret/xpaw/api/"
+    }
+}

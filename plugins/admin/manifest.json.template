@@ -1,0 +1,12 @@
+{
+    "name": "Admin",
+    "tag": "ADMIN",
+    "version": "1.0",
+    "description": "OP Commands",
+    "usage": ".part | join | quit | nick",
+    "mainConstruct": "admin",
+
+    "permissions": {
+        "hostmask": 2
+    }
+}
