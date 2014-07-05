@@ -45,7 +45,7 @@ var onCommand = function (command, nick, to) {
             _super.getBot().say('\u266ANever gonna let you down!\u266A\u266B', to);
             return;
         case 'bing':
-            _super.getBot().say('1 results for "boobs": (.y.)');
+            _super.getBot().say('1 results for "boobs": (.y.)', to);
             return;
         case 'bong':
             _super.getBot().doAction('smokes an egg.', to);
