@@ -26,8 +26,8 @@ exports.onLoad = function () {
     cmdListener = _super.getBot().on('cmd', onCommand);
 
     loadOptions();
-    setInterval(checkNew, _super.getSetting('check-interval') * 1000);
     populateFields();
+    setInterval(checkNew, _super.getSetting('check-interval') * 1000);
 };
 
 exports.onUnload = function () {
@@ -51,7 +51,7 @@ var onCommand = function (command, nick, to) {
     }
 };
 
-var loadOptions = function(){
+var loadOptions = function () {
     options.url = _super.getSetting('source-url');
     options.headers = {'user-agent': _super.getSetting('user-agent')};
     options.port = _super.getSetting('source-port');
@@ -60,9 +60,9 @@ var loadOptions = function(){
 
 // Check for newer versions
 var checkNew = function () {
-    getEtag(function (resp) {
-        if (resp !== undefined && resp.headers.etag && resp.headers.etag != versions.etag) {
-            versions.etag = resp.headers.etag;
+    getEtag(function (_etag) {
+        if (_etag != versions.etag) {
+            versions.etag = _etag;
             getVersions(checkUpdates);
         }
     });
@@ -71,7 +71,9 @@ var checkNew = function () {
 // Check if a new version is out, return etag
 var getEtag = function (callback) {
     request.head(options, function (err, resp) {
-        callback(resp);
+        if (resp !== undefined && resp.headers.etag !== undefined) {
+            callback(resp.headers.etag);
+        }
     });
 };
 
