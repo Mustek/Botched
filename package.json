@@ -1,14 +1,28 @@
 {
-    "name": "Botched IRC Bot",
+    "name": "Botched_IRC_Bot",
     "description": "An IRC bot created for #Minecraft on Freenode",
     "author": "Mustek, @iMustek",
+    "version": "1.0.blah",
+    "keywords": ["Bot", "Minecraft", "IRC"],
+
+    "bugs": "https://github.com/Mustek/Botched/issues",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Mustek/Botched.git"
+    },
+
+    "licenses": [{
+        "type": "GPL",
+        "url": "https://github.com/Mustek/Botched/blob/master/LICENSE"
+    }],
+
     "dependencies": {
-        "airbrake": ">= 0.3.8",
-        "extend": ">= 1.1.3",
-        "goo.gl": ">= 0.0.2",
-        "irc": ">= 0.3.7",
-        "oop-module": ">= 0.0.5",
-        "request": ">= 2.27.0"
+        "airbrake": ">=0.3.8",
+        "extend": ">=1.1.3",
+        "goo.gl": ">=0.0.2",
+        "irc": ">=0.3.7",
+        "oop-module": ">=0.0.5",
+        "request": ">=2.27.0"
     },
 
     "engine": "node 0.10.22"
