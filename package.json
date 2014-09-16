@@ -2,7 +2,7 @@
     "name": "Botched_IRC_Bot",
     "description": "An IRC bot created for #Minecraft on Freenode",
     "author": "Mustek, @iMustek",
-    "version": "1.0.blah",
+    "version": "1.0.0",
     "keywords": ["Bot", "Minecraft", "IRC"],
 
     "bugs": "https://github.com/Mustek/Botched/issues",
