@@ -32,12 +32,13 @@ var onCommand = function (command, nick, to) {
         http.get({url: feed}, function (err, resp, body) {
             var entry = JSON.parse(body).responseData.feed.entries[0];
             var entryDate = new Date(Date.parse(entry.publishedDate));
-            googl.shorten(entry.link, function (shorturl) {
-                console.log(shorturl);
+            googl.shorten(entry.link).then(function(shorturl){
                 _super.getBot().say(util.format('%s%s%s | %s%d-%d-%d%s | %s%s%s',
                     COLOR.BOLD, entry.title, COLOR.RESET,
                     COLOR.LIGHT_GRAY, entryDate.getFullYear(), entryDate.getMonth(), entryDate.getDate(), COLOR.RESET,
-                    COLOR.LIGHT_GRAY, shorturl.id, COLOR.RESET), to);
+                    COLOR.LIGHT_GRAY, shorturl, COLOR.RESET), to);
+            }).catch(function(err){
+                util.error("Error while shortening url: " + err.message);
             });
         });
     }
