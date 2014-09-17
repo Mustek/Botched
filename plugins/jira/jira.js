@@ -74,7 +74,7 @@ var fetchData = function (bugCode, callback) {
                     state: (body.fields.resolution !== null) ? body.fields.resolution.name.replace('Works As Intended', 'Intended') : 'Open',
                     fixVersion: (body.fields.fixVersions[0] !== undefined) ? body.fields.fixVersions[0].name.replace('Minecraft ', '') : '',
                     dupeVersion: (body.fields.issuelinks[0] !== undefined && body.fields.issuelinks[0].outwardIssue !== undefined) ? body.fields.issuelinks[0].outwardIssue.key : '',
-                    shortUrl: shorturl.id
+                    shortUrl: shorturl
                 };
                 callback(0, reply);
             }).catch(function(err){
