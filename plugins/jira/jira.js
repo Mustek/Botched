@@ -67,16 +67,18 @@ var fetchData = function (bugCode, callback) {
         if (!err && resp.statusCode == 200) {
 
             body = JSON.parse(body);
-            googl.shorten(_super.getSetting('jira-browse').replace('{bug}', body.key), function (shorturl) {
+            googl.shorten(_super.getSetting('jira-browse').replace('{bug}', body.key)).then(function(shorturl){
                 var reply = {
                     key: body.key,
-                    description: (body.fields.summary.length > 40) ? body.fields.summary.substring(0, 69) + '\u2026' : body.fields.summary,
+                    description: (body.fields.summary.length > 70) ? body.fields.summary.substring(0, 69) + '\u2026' : body.fields.summary,
                     state: (body.fields.resolution !== null) ? body.fields.resolution.name.replace('Works As Intended', 'Intended') : 'Open',
                     fixVersion: (body.fields.fixVersions[0] !== undefined) ? body.fields.fixVersions[0].name.replace('Minecraft ', '') : '',
                     dupeVersion: (body.fields.issuelinks[0] !== undefined && body.fields.issuelinks[0].outwardIssue !== undefined) ? body.fields.issuelinks[0].outwardIssue.key : '',
                     shortUrl: shorturl.id
                 };
                 callback(0, reply);
+            }).catch(function(err){
+                util.error("Error while shortening url: " + err.message);
             });
         } else if (resp.statusCode == 401) {
             callback(401, "This is a private bugreport.");
