@@ -49,5 +49,8 @@ var onCommand = function (command, nick, to) {
             return;
         case 'bong':
             _super.getBot().doAction('smokes an egg.', to);
+            return;
+        case 'biss':
+            _super.getBot().doAction('wees on ' + nick, to);
     }
 };
